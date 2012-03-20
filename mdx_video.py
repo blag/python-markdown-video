@@ -1,4 +1,4 @@
-m#!/usr/bin/env python
+#!/usr/bin/env python
 
 """
 Embeds web videos using URLs.  For instance, if a URL to an youtube video is
