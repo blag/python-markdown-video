@@ -305,6 +305,7 @@ def flash_object(url, width, height):
     param.set('value', 'true')
     param.set('allowfullscreen')
     obj.append(param)
+    return obj
 
 
 def iframe_object(url, width, height):
@@ -313,6 +314,7 @@ def iframe_object(url, width, height):
     obj.set('height', height)
     obj.set('src', url + '?rel=0')
     obj.set('frameborder', 0)
+    return obj
 
 
 def makeExtension(configs=None) :
