@@ -303,7 +303,6 @@ def flash_object(url, width, height):
     param = etree.Element('param')
     param.set('name', 'allowFullScreen')
     param.set('value', 'true')
-    param.set('allowfullscreen')
     obj.append(param)
     return obj
 
@@ -314,6 +313,7 @@ def iframe_object(url, width, height):
     obj.set('height', height)
     obj.set('src', url + '?rel=0')
     obj.set('frameborder', 0)
+    #obj.set('allowfullscreen')
     return obj
 
 
