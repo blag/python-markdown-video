@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+m#!/usr/bin/env python
 
 """
 Embeds web videos using URLs.  For instance, if a URL to an youtube video is
@@ -297,16 +297,22 @@ def flash_object(url, width, height):
     param.set('value', url)
     obj.append(param)
     param = etree.Element('param')
-    param.set('name', 'wmode'))
+    param.set('name', 'wmode')
     param.set('value', 'opaque')
     obj.append(param)
     param = etree.Element('param')
     param.set('name', 'allowFullScreen')
     param.set('value', 'true')
+    param.set('allowfullscreen')
     obj.append(param)
 
 
-def iframe_object(url, width, height)
+def iframe_object(url, width, height):
+    obj = etree.Element('iframe')
+    obj.set('width', width)
+    obj.set('height', height)
+    obj.set('src', url + '?rel=0')
+    obj.set('frameborder', 0)
 
 
 def makeExtension(configs=None) :
