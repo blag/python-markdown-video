@@ -274,7 +274,7 @@ class Youtube(markdown.inlinepatterns.Pattern):
         url = 'http://www.youtube.com/v/%s' % m.group('youtubeargs')
         width = self.ext.config['youtube_width'][0]
         height = self.ext.config['youtube_height'][0]
-        return iframe_object(url, width, height)
+        return flash_object(url, width, height)
 
 
 class YoutubeShort(markdown.inlinepatterns.Pattern):
@@ -283,7 +283,7 @@ class YoutubeShort(markdown.inlinepatterns.Pattern):
         url = 'http://www.youtube.com/v/%s' % m.group('youtubeargs')
         width = self.ext.config['youtube_width'][0]
         height = self.ext.config['youtube_height'][0]
-        return iframe_object(url, width, height)
+        return flash_object(url, width, height)
 
 
 def flash_object(url, width, height):
