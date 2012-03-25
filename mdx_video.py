@@ -271,19 +271,19 @@ class Yahoo(markdown.inlinepatterns.Pattern):
 class Youtube(markdown.inlinepatterns.Pattern):
 
     def handleMatch(self, m):
-        url = 'http://www.youtube.com/v/%s' % m.group('youtubeargs')
+        url = 'http://www.youtube.com/embed/%s' % m.group('youtubeargs')
         width = self.ext.config['youtube_width'][0]
         height = self.ext.config['youtube_height'][0]
-        return flash_object(url, width, height)
+        return iframe_object(url, width, height)
 
 
 class YoutubeShort(markdown.inlinepatterns.Pattern):
 
     def handleMatch(self, m):
-        url = 'http://www.youtube.com/v/%s' % m.group('youtubeargs')
+        url = 'http://www.youtube.com/embed/%s' % m.group('youtubeargs')
         width = self.ext.config['youtube_width'][0]
         height = self.ext.config['youtube_height'][0]
-        return flash_object(url, width, height)
+        return iframe_object(url, width, height)
 
 
 def flash_object(url, width, height):
@@ -312,8 +312,8 @@ def iframe_object(url, width, height):
     obj.set('width', width)
     obj.set('height', height)
     obj.set('src', url + '?rel=0')
-    obj.set('frameborder', 0)
-    #obj.set('allowfullscreen')
+    obj.set('frameborder', '0')
+    obj.set('allowfullscreen', 'allowfullscreen')
     return obj
 
 
